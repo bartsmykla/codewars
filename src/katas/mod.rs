@@ -11,3 +11,4 @@ pub mod integers_recreation_one;
 pub mod moduli_number_system;
 pub mod validate_sudoku_with_size_nxn;
 pub mod esolang_interpreters_1;
+pub mod cafeteria;
