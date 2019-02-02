@@ -14,3 +14,4 @@ pub mod esolang_interpreters_1;
 pub mod cafeteria;
 pub mod tortoise_racing;
 pub mod camel_case_method;
+pub mod character_frequency;
