@@ -24,3 +24,4 @@ pub mod k8_find_the_smallest_integer_in_the_array;
 pub mod k8_grasshopper_terminal_game_move_function;
 pub mod k7_number_of_people_in_the_bus;
 pub mod k8_alternating_case;
+pub mod k8_sort_and_star;
