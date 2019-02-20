@@ -19,3 +19,4 @@ pub mod make_the_deadfish_swim;
 pub mod century_from_year;
 pub mod convert_a_string_to_a_number;
 pub mod convert_a_number_to_a_string;
+pub mod exes_and_ohs;
