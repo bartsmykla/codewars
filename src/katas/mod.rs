@@ -16,3 +16,4 @@ pub mod tortoise_racing;
 pub mod camel_case_method;
 pub mod character_frequency;
 pub mod make_the_deadfish_swim;
+pub mod century_from_year;
