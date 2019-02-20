@@ -27,3 +27,4 @@ pub mod k8_alternating_case;
 pub mod k8_sort_and_star;
 pub mod k7_thinkful_string_drills_repeater;
 pub mod k8_will_you_make_it;
+pub mod k6_prize_draw;
