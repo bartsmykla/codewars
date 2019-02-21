@@ -76,8 +76,8 @@ fn sq_in_rect(mut length: i32, mut width: i32) -> Option<Vec<i32>> {
             },
             Equal => {
                 result.push(length);
-                length -= width;
-                width -= length;
+                length = 0;
+                width = 0;
             }
         }
     }
@@ -86,7 +86,7 @@ fn sq_in_rect(mut length: i32, mut width: i32) -> Option<Vec<i32>> {
 }
 
 fn testing(lng: i32, wdth: i32, exp: Option<Vec<i32>>) {
-    assert_eq!(sq_in_rect(lng, wdth), exp)
+    assert_eq!(sq_in_rect_iter(lng, wdth), exp)
 }
 
 #[test]
@@ -94,4 +94,58 @@ fn tests_sq_in_rect() {
     testing(5, 3, Some(vec![3, 2, 1, 1]));
     testing(3, 5, Some(vec![3, 2, 1, 1]));
     testing(5, 5, None);
+}
+
+
+#[derive(Debug)]
+struct RectSides {
+    length: i32,
+    width: i32,
+}
+
+impl RectSides {
+    fn new(length: i32, width: i32) -> Self {
+        Self {
+            length,
+            width,
+        }
+    }
+}
+
+impl Iterator for RectSides {
+    type Item = i32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.length == 0 && self.width == 0 {
+            return None;
+        }
+
+        match self.length.cmp(&self.width) {
+            Greater => {
+                self.length -= self.width;
+
+                Some(self.width)
+            },
+            Less => {
+                self.width -= self.length;
+
+                Some(self.length)
+            },
+            Equal => {
+                let min_side = self.width;
+                self.width = 0;
+                self.length = 0;
+
+                Some(min_side)
+            }
+        }
+    }
+}
+
+fn sq_in_rect_iter(length: i32, width: i32) -> Option<Vec<i32>> {
+    if length == width || length < 1 || width < 1 {
+        return None;
+    }
+
+    Some(RectSides::new(length, width).collect())
 }
