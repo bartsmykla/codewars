@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 fn my_first_interpreter(code: &str) -> String {
     let mut cell = 0_u8;
 

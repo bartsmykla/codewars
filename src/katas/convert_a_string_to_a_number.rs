@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata: https://www.codewars.com/kata/convert-a-string-to-a-number/train/rust
 

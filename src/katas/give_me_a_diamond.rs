@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use std::iter::repeat;
 
 fn print(n: i32) -> Option<String> {
@@ -25,20 +27,6 @@ fn print(n: i32) -> Option<String> {
 
     Some(format!("{}{}{}", bottom, middle, top))
 }
-
-//fn format_row(row: i32, n: i32) -> String {
-//
-//}
-//
-//fn print_v2(n: i32) -> Option<String> {
-//    if n < 1 || n % 2 == 0 {
-//        return None;
-//    }
-//
-//    (..n).fold();
-//
-//    None
-//}
 
 #[test]
 fn basic_test() {

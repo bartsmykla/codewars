@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 fn parse(code: &str) -> Vec<i32> {
     let mut result = vec![];
     let mut num = 0;

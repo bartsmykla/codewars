@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use std::collections::BTreeMap;
 
 fn letter_frequency(input: &str) -> BTreeMap<char, i32> {
@@ -6,11 +8,11 @@ fn letter_frequency(input: &str) -> BTreeMap<char, i32> {
             return acc;
         }
 
-        if let Some(mut v) = acc.get_mut(&c) {
-            *v = *v + 1
+        if let Some(v) = acc.get_mut(&c) {
+            *v += 1
         }
 
-        if let None = acc.get_mut(&c) {
+        if acc.get_mut(&c).is_none() {
             acc.insert(c, 1);
         }
 

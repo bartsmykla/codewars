@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata: https://www.codewars.com/kata/sort-and-star/rust
 
@@ -10,8 +12,6 @@
 
     You should not remove or add elements from/to the array.
 */
-
-use std::str::Chars;
 
 fn two_sort(arr: &[&str]) -> String {
     let mut arr_clone = arr.to_vec();

@@ -8,8 +8,4 @@ edition = "2018"
 name = "codewars"
 path = "src/lib.rs"
 
-[[bin]]
-name = "main"
-path = "src/main.rs"
-
 [dependencies]

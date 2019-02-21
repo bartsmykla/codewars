@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 struct Sudoku{
     data: Vec<Vec<u32>>,
 }

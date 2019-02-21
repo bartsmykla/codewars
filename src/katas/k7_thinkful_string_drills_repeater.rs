@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata: https://www.codewars.com/kata/thinkful-string-drills-repeater/train/rust
 

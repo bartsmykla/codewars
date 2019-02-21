@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata: https://www.codewars.com/kata/number-of-people-in-the-bus/rust
 
@@ -28,7 +30,7 @@
 
 fn number(bus_stops:&[(i32,i32)]) -> i32 {
     bus_stops.iter()
-        .fold(0, |mut acc, &(pin, pout)| {
+        .fold(0, |acc, &(pin, pout)| {
             acc + pin - pout
         })
 }

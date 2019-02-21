@@ -1,5 +1,8 @@
+#![allow(unused)]
+
 fn chessboard_cell_color(cell1: &str, cell2: &str) -> bool {
-    cell1.as_bytes().iter().sum::<u8>() % 2 == cell2.as_bytes().iter().sum::<u8>() % 2
+    cell1.as_bytes().iter().sum::<u8>() % 2 ==
+        cell2.as_bytes().iter().sum::<u8>() % 2
 }
 
 #[test]

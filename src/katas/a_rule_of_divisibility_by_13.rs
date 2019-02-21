@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use std::string::ToString;
 
 fn thirt(n: i64) -> i64 {
@@ -7,7 +9,7 @@ fn thirt(n: i64) -> i64 {
         .map(|d| d.to_digit(10).unwrap())
         .rev()
         .zip([1, 10, 9, 12, 3, 4].iter().cycle())
-        .map(|(a, b)| (a * b) as i64)
+        .map(|(a, b)| i64::from(a * b))
         .sum();
 
 
@@ -18,7 +20,7 @@ fn thirt(n: i64) -> i64 {
     thirt(result)
 }
 
-fn testequal(n: i64, exp: i64) -> () {
+fn testequal(n: i64, exp: i64) {
     assert_eq!(exp, thirt(n))
 }
 

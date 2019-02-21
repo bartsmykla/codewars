@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 fn race(v1: i32, v2: i32, g: i32) -> Option<Vec<i32>> {
     if v1 >= v2 {
         return None;

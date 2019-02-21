@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 // Preloaded:
 //
 // struct MorseDecoder {
@@ -85,7 +87,7 @@ impl MorseDecoder {
                     return " ".to_string();
                 }
 
-                self.morse_code.get(unit).unwrap().clone()
+                self.morse_code[unit].clone()
             })
             .collect()
     }

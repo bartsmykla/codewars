@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata: https://www.codewars.com/kata/exes-and-ohs/train/rust
 

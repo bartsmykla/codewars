@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 fn camel_case(str: &str) -> String {
     let mut result = String::new();
     let mut word = String::new();

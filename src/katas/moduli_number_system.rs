@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 fn gcd(m: i64, n: i64) -> i64 {
     if m == 0 {
         n.abs()
@@ -6,7 +8,7 @@ fn gcd(m: i64, n: i64) -> i64 {
     }
 }
 
-fn are_pairwise_coprime(numbers: &Vec<i64>) -> bool {
+fn are_pairwise_coprime(numbers: &[i64]) -> bool {
     for (ni, &n) in numbers.iter().enumerate() {
         for (nk, &k) in numbers.iter().enumerate() {
             if ni == nk {
@@ -32,7 +34,7 @@ fn from_nb_2str(n: i64, sys: Vec<i64>) -> String {
     sys.iter().map(|k| format!("-{}-", n % k)).collect::<String>()
 }
 
-fn testing(n: i64, sys: Vec<i64>, exp: &str) -> () {
+fn testing(n: i64, sys: Vec<i64>, exp: &str) {
     assert_eq!(&from_nb_2str(n, sys), exp)
 }
 

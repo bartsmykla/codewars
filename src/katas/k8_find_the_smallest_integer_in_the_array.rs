@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata: https://www.codewars.com/kata/find-the-smallest-integer-in-the-array/train/rust
 

@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata: https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097/train/rust
 
@@ -19,7 +21,6 @@
 */
 
 fn century(year: u32) -> u32 {
-    // your code here
     (year as f32 / 100.0).ceil() as u32
 }
 
