@@ -29,3 +29,4 @@ pub mod k7_thinkful_string_drills_repeater;
 pub mod k8_will_you_make_it;
 pub mod k6_prize_draw;
 pub mod k6_rectangle_into_squares;
+pub mod k7_sort_numbers;
