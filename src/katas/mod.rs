@@ -30,3 +30,4 @@ pub mod k8_will_you_make_it;
 pub mod k6_prize_draw;
 pub mod k6_rectangle_into_squares;
 pub mod k7_sort_numbers;
+pub mod k6_up_and_down;
