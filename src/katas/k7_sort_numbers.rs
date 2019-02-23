@@ -1,3 +1,4 @@
+#![allow(unused)]
 /*
     Kata: Sort Numbers (7kyu)
     Url: https://www.codewars.com/kata/sort-numbers/rust
@@ -12,9 +13,8 @@
         sort_numbers(&vec![]); // should return !vec[]
 */
 
-fn sort_numbers(arr: &Vec<i32>) -> Vec<i32> {
-    // we can also use arr.to_owned()
-    let mut cloned_arr = arr.clone();
+fn sort_numbers(arr: &[i32]) -> Vec<i32> {
+    let mut cloned_arr = arr.to_owned();
 
     cloned_arr.sort();
 
