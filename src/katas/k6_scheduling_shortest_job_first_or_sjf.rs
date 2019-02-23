@@ -41,13 +41,8 @@
 fn sjf(jobs: &[usize], index: usize) -> usize {
     jobs.iter()
         .enumerate()
-        .filter_map(|(i, &cc)| {
-            if cc < jobs[index] || (cc == jobs[index] && i <= index) {
-                Some(cc)
-            } else {
-                None
-            }
-        })
+        .filter(|&(i, &cc)| (cc, i) <= (jobs[index], index))
+        .map(|(_, &cc)| cc)
         .sum()
 }
 
