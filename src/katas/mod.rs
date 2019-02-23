@@ -31,3 +31,4 @@ pub mod k6_prize_draw;
 pub mod k6_rectangle_into_squares;
 pub mod k7_sort_numbers;
 pub mod k6_up_and_down;
+pub mod k6_scheduling_shortest_job_first_or_sjf;
