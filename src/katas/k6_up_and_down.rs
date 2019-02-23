@@ -61,7 +61,7 @@
 
 fn arrange(s: &str) -> String {
     if s.is_empty() {
-        return s.to_owned()
+        return String::new();
     }
 
     let mut words: Vec<_> = s.split_whitespace()
@@ -70,10 +70,12 @@ fn arrange(s: &str) -> String {
 
     for i in 0..words.len() {
         if i + 1 < words.len() {
+            let (a_len, b_len) = (words[i].len(), words[i + 1].len());
+
             let should_swap = if i % 2 == 0 {
-                words[i].len() > words[i + 1].len()
+                a_len > b_len
             } else {
-                words[i].len() < words[i + 1].len()
+                a_len < b_len
             };
 
             if should_swap {
@@ -89,6 +91,54 @@ fn arrange(s: &str) -> String {
     }
 
     words.join(" ")
+}
+
+use std::cell::Cell;
+
+// Method .as_slice_of_cells is available only in nightly, experimental
+fn arrange_nightly(s: &str) -> String {
+    if s.is_empty() {
+        return String::new();
+    }
+
+    let mut words: Vec<_> = s.split_whitespace().collect();
+
+    for (i, words) in Cell::from_mut(&mut words[..])
+        .as_slice_of_cells()
+        .windows(2)
+        .enumerate()
+        {
+            let a = &words[0];
+            let b = &words[1];
+
+            let (a_len, b_len) = (a.get().len(), b.get().len());
+
+            let should_swap = if i % 2 == 0 {
+                a_len > b_len
+            } else {
+                a_len < b_len
+            };
+
+            if should_swap {
+                a.swap(b);
+            }
+        }
+
+    let mut result = String::with_capacity(s.len());
+
+    for (i, word) in words.into_iter().enumerate() {
+        if i != 0 {
+            result.push(' ');
+        }
+
+        if i % 2 == 0 {
+            result.extend(word.chars().flat_map(char::to_lowercase));
+        } else {
+            result.extend(word.chars().flat_map(char::to_uppercase));
+        }
+    }
+
+    result
 }
 
 fn testing(s: &str, exp: &str) {
@@ -110,3 +160,26 @@ fn basics_arrange() {
         "i CAME on WERE up GRANDMOTHERS so",
     );
 }
+
+/*
+    The arrange_nightly() function was written on the example of function
+    written by user scottmcm on Rust's community discord server,
+    channel: #code-review (23.02.2019)
+    https://play.rust-lang.org/?version=nightly&mode=debug&edition=2018&gist=b5ced4ed81466c945845181d68600911
+
+    What I have learned:
+        - It's the first time I saw the `.flat_map`, which not only let you
+          map over the iterator where the map function/closure needs to return
+          Sized values (ie. i32, i64 ...), but it also can return iterators,
+          results, options etc.
+        - It's also the first time, where I used `.extend` method like that,
+          which is very helpful, and instead of doing `.push(c)` for every
+          character, I can put iterator which produces characters inside.
+          Very useful.
+        - It's also the first time when I used `Cell` and
+          its method: `.as_slice_of_cells` (which is not stable yet).
+          I definitely need to read more about Cells.
+        - Another thing I haven't seen yet are the window iterators.
+          I read a little bit about them, but it would be good to play
+          with them more.
+*/
