@@ -60,34 +60,35 @@
 */
 
 fn arrange(s: &str) -> String {
-    let mut slice: Vec<_> = s.split_whitespace().collect();
+    if s.is_empty() {
+        return s.to_owned()
+    }
 
-    for i in 0..slice.len() - 1 {
-        let mut curr = slice[i];
-        let mut next = slice[i + 1];
+    let mut words: Vec<_> = s.split_whitespace()
+        .map(&str::to_string)
+        .collect();
 
-        let should_swap = if i % 2 == 0 {
-            curr.len() > next.len()
+    for i in 0..words.len() {
+        if i + 1 < words.len() {
+            let should_swap = if i % 2 == 0 {
+                words[i].len() > words[i + 1].len()
+            } else {
+                words[i].len() < words[i + 1].len()
+            };
+
+            if should_swap {
+                words.swap(i, i + 1)
+            }
+        }
+
+        if i % 2 == 0 {
+            words[i] = words[i].to_lowercase();
         } else {
-            curr.len() < next.len()
-        };
-
-        if should_swap {
-            slice.swap(i, i + 1)
+            words[i] = words[i].to_uppercase();
         }
     }
 
-    slice.iter()
-        .enumerate()
-        .map(|(i, word)| {
-            if i % 2 != 0 {
-                word.to_uppercase()
-            } else {
-                word.to_lowercase()
-            }
-        })
-        .collect::<Vec<String>>()
-        .join(" ")
+    words.join(" ")
 }
 
 fn testing(s: &str, exp: &str) {
