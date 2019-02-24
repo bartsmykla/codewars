@@ -45,3 +45,4 @@ pub mod k8_opposite_number;
 pub mod k8_the_feast_of_many_beasts;
 pub mod k8_remove_string_spaces;
 pub mod k8_parse_nice_int_from_char_problem;
+pub mod k8_count_of_positives_sum_of_negatives;
