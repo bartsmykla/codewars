@@ -21,3 +21,11 @@ fn basic_test() {
     assert_eq!(grow(vec![4, 1, 1, 1, 4]), 16);
     assert_eq!(grow(vec![2, 2, 2, 2, 2, 2]), 64);
 }
+
+/*
+    Questions?
+        - What is the name of a method over iterators to get the product
+          of all numbers from them combined?
+
+          `.product()`
+*/
