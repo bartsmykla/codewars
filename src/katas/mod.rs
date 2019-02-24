@@ -44,3 +44,4 @@ pub mod k8_beginner_reduce_but_grow;
 pub mod k8_opposite_number;
 pub mod k8_the_feast_of_many_beasts;
 pub mod k8_remove_string_spaces;
+pub mod k8_parse_nice_int_from_char_problem;
