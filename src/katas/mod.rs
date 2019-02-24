@@ -37,3 +37,4 @@ pub mod k8_abbreviate_a_two_word_name;
 pub mod k8_if_you_cant_sleep_just_count_sheep;
 pub mod k8_dna_to_rna_conversion;
 pub mod k7_form_the_minimum;
+pub mod k7_tooleetspeeak;
