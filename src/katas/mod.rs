@@ -40,3 +40,4 @@ pub mod k7_form_the_minimum;
 pub mod k7_tooleetspeeak;
 pub mod k8_reversed_sequence;
 pub mod k7_sum_of_angles;
+pub mod k8_beginner_reduce_but_grow;
