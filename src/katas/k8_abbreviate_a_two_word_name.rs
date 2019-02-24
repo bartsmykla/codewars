@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 /*
     Kata (8kyu): Abbreviate a Two Word Name
     Url: https://www.codewars.com/kata/abbreviate-a-two-word-name/train/rust
