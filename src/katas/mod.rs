@@ -42,3 +42,4 @@ pub mod k8_reversed_sequence;
 pub mod k7_sum_of_angles;
 pub mod k8_beginner_reduce_but_grow;
 pub mod k8_opposite_number;
+pub mod k8_the_feast_of_many_beasts;
