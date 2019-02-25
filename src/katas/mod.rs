@@ -47,3 +47,4 @@ pub mod k8_remove_string_spaces;
 pub mod k8_parse_nice_int_from_char_problem;
 pub mod k8_count_of_positives_sum_of_negatives;
 pub mod k8_even_or_odd;
+pub mod k8_square_n_sum;
