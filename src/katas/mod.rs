@@ -57,3 +57,4 @@ pub mod k8_reversed_words;
 pub mod k8_thinkful_number_drills_pixelart_planning;
 pub mod k8_thinkful_number_drills_blue_and_red_marbles;
 pub mod k8_how_many_lightsabers_do_you_own;
+pub mod k8_whats_up_next;
