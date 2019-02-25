@@ -52,3 +52,4 @@ pub mod k8_grasshopper_terminal_game_combat_function;
 pub mod k8_get_nth_even_number;
 pub mod k8_reversed_strings;
 pub mod k8_string_repeat;
+pub mod k8_counting_sheep;
