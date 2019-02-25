@@ -54,3 +54,4 @@ pub mod k8_reversed_strings;
 pub mod k8_string_repeat;
 pub mod k8_counting_sheep;
 pub mod k8_reversed_words;
+pub mod k8_thinkful_number_drills_pixelart_planning;
