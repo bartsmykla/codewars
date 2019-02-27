@@ -52,14 +52,35 @@
 */
 
 fn comp(mut a: Vec<i64>, mut b: Vec<i64>) -> bool {
+    if a.len() != b.len() { return false }
+
+    a.sort_unstable_by_key(|&n| n.abs());
+    b.sort_unstable_by_key(|&n| n.abs());
+
+    a.into_iter().zip(b).all(|(a, b)| a * a == b)
+}
+
+// Still no allocations, with much better best-case times
+// O(n + d*log(n)) where d is the number of matching elements before
+// the largest non-matching one.
+// Solution from user ᚮscottmcmᚭ at Rust community discord server,
+// channel: #code-review
+fn comp_v2(mut a: Vec<i64>, b: Vec<i64>) -> bool {
+    if a.len() != b.len() { return false }
+
     a.iter_mut().for_each(|n| {
         *n *= *n
     });
 
-    a.sort();
-    b.sort();
+    use std::collections::BinaryHeap;
+    let mut a = BinaryHeap::from(a);
+    let mut b = BinaryHeap::from(b);
 
-    a == b
+    while let (Some(a), Some(b)) = (a.pop(), b.pop()) {
+        if a != b { return false }
+    }
+
+    true
 }
 
 fn testing(a: Vec<i64>, b: Vec<i64>, exp: bool) {
