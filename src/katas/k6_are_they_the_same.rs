@@ -51,14 +51,15 @@
     If a or b are empty then the result is self-evident.
 */
 
-fn comp(a: Vec<i64>, b: Vec<i64>) -> bool {
-    let mut squared_a: Vec<_> = a.iter().map(|&n| n * n).collect();
-    let mut cloned_b = b.clone();
+fn comp(mut a: Vec<i64>, mut b: Vec<i64>) -> bool {
+    a.iter_mut().for_each(|n| {
+        *n *= *n
+    });
 
-    squared_a.sort();
-    cloned_b.sort();
+    a.sort();
+    b.sort();
 
-    squared_a == cloned_b
+    a == b
 }
 
 fn testing(a: Vec<i64>, b: Vec<i64>, exp: bool) {
