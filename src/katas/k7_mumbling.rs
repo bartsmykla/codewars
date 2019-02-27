@@ -22,10 +22,9 @@ fn accum(s: &str) -> String {
         .map(|(i, c)| {
             let mut result = c.to_ascii_uppercase().to_string();
 
-            result.extend(c.to_ascii_lowercase()
+            result.push_str(&c.to_ascii_lowercase()
                 .to_string()
-                .repeat(i)
-                .chars());
+                .repeat(i));
 
             result
         })
