@@ -36,14 +36,19 @@ fn contain_all_rots(string: &str, arr: Vec<&str>) -> bool {
         return true;
     }
 
-    let hash_array: HashSet<_> = arr.iter().cloned().map(&str::to_owned).collect();
+    let mut rotation = String::with_capacity(string.len());
+
+    let hash_array: HashSet<_> = arr.into_iter().collect();
 
     for i in 0..string.len() {
-        let rotation = string[i..].to_string() + &string[..i];
+        rotation.push_str(&string[i..]);
+        rotation.push_str(&string[..i]);
 
-        if hash_array.get(&rotation).is_none() {
+        if !hash_array.contains(rotation.as_str()) {
             return false;
         }
+
+        rotation.clear()
     }
 
     true
