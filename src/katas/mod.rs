@@ -26,6 +26,7 @@ pub mod k7_form_the_minimum;
 pub mod k7_mumbling;
 pub mod k7_number_of_people_in_the_bus;
 pub mod k7_reverse_words;
+pub mod k7_simple_beads_count;
 pub mod k7_sort_numbers;
 pub mod k7_sum_of_angles;
 pub mod k7_thinkful_string_drills_repeater;
