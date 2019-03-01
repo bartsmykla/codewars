@@ -24,6 +24,7 @@ pub mod k6_scheduling_shortest_job_first_or_sjf;
 pub mod k6_up_and_down;
 pub mod k7_form_the_minimum;
 pub mod k7_frequency_sequence;
+pub mod k7_is_it_negative_zero_0;
 pub mod k7_mumbling;
 pub mod k7_number_of_people_in_the_bus;
 pub mod k7_reverse_words;
