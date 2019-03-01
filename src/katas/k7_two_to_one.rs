@@ -20,7 +20,9 @@
 */
 
 fn longest(a1: &str, a2: &str) -> String {
-    let mut result: Vec<_> = a1.bytes().chain(a2.bytes()).collect();
+    let mut result = Vec::with_capacity(a1.len() + a2.len());
+    result.extend_from_slice(a1.as_bytes());
+    result.extend_from_slice(a2.as_bytes());
 
     result.sort();
     result.dedup();
