@@ -22,6 +22,7 @@ pub mod k6_prize_draw;
 pub mod k6_rectangle_into_squares;
 pub mod k6_scheduling_shortest_job_first_or_sjf;
 pub mod k6_up_and_down;
+pub mod k7_all_inclusive;
 pub mod k7_form_the_minimum;
 pub mod k7_frequency_sequence;
 pub mod k7_is_it_negative_zero_0;
