@@ -34,6 +34,7 @@ pub mod k7_sort_numbers;
 pub mod k7_sum_of_angles;
 pub mod k7_thinkful_string_drills_repeater;
 pub mod k7_tooleetspeeak;
+pub mod k7_two_to_one;
 pub mod k8_8kyu_interpreters_hq9_plus;
 pub mod k8_abbreviate_a_two_word_name;
 pub mod k8_alternating_case;
