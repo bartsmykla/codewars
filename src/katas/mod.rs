@@ -26,6 +26,7 @@ pub mod k7_all_inclusive;
 pub mod k7_form_the_minimum;
 pub mod k7_frequency_sequence;
 pub mod k7_is_it_negative_zero_0;
+pub mod k7_moves_in_squared_strings_i;
 pub mod k7_mumbling;
 pub mod k7_number_of_people_in_the_bus;
 pub mod k7_reverse_words;
