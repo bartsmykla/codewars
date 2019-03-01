@@ -48,8 +48,8 @@
 */
 
 fn to_leet_speak(s: &str) -> String {
-    s.chars().map(|c| {
-        match c {
+    s.chars()
+        .map(|c| match c {
             'A' => '@',
             'B' => '8',
             'C' => '(',
@@ -77,32 +77,23 @@ fn to_leet_speak(s: &str) -> String {
             'Y' => 'Y',
             'Z' => '2',
             _ => c,
-        }
-    }).collect()
+        })
+        .collect()
 }
 
 #[test]
 fn leet() {
-    assert_eq!(
-        to_leet_speak("LEET"),
-        "1337",
-    );
+    assert_eq!(to_leet_speak("LEET"), "1337",);
 }
 
 #[test]
 fn codewars() {
-    assert_eq!(
-        to_leet_speak("CODEWARS"),
-        "(0D3W@R$",
-    );
+    assert_eq!(to_leet_speak("CODEWARS"), "(0D3W@R$",);
 }
 
 #[test]
 fn hello_world() {
-    assert_eq!(
-        to_leet_speak("HELLO WORLD"),
-        "#3110 W0R1D",
-    );
+    assert_eq!(to_leet_speak("HELLO WORLD"), "#3110 W0R1D",);
 }
 
 #[test]

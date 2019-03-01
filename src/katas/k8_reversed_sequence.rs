@@ -10,7 +10,7 @@
 */
 
 fn reverse_seq(n: u32) -> Vec<u32> {
-    (0 .. n).map(|x| n - x).collect()
+    (0..n).map(|x| n - x).collect()
 }
 
 #[test]

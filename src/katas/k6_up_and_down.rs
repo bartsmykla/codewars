@@ -64,9 +64,7 @@ fn arrange(s: &str) -> String {
         return String::new();
     }
 
-    let mut words: Vec<_> = s.split_whitespace()
-        .map(&str::to_string)
-        .collect();
+    let mut words: Vec<_> = s.split_whitespace().map(&str::to_string).collect();
 
     for i in 0..words.len() {
         if i + 1 < words.len() {
@@ -107,22 +105,22 @@ fn arrange_nightly(s: &str) -> String {
         .as_slice_of_cells()
         .windows(2)
         .enumerate()
-        {
-            let a = &words[0];
-            let b = &words[1];
+    {
+        let a = &words[0];
+        let b = &words[1];
 
-            let (a_len, b_len) = (a.get().len(), b.get().len());
+        let (a_len, b_len) = (a.get().len(), b.get().len());
 
-            let should_swap = if i % 2 == 0 {
-                a_len > b_len
-            } else {
-                a_len < b_len
-            };
+        let should_swap = if i % 2 == 0 {
+            a_len > b_len
+        } else {
+            a_len < b_len
+        };
 
-            if should_swap {
-                a.swap(b);
-            }
+        if should_swap {
+            a.swap(b);
         }
+    }
 
     let mut result = String::with_capacity(s.len());
 
@@ -147,10 +145,7 @@ fn testing(s: &str, exp: &str) {
 
 #[test]
 fn basics_arrange() {
-    testing(
-        "after be arrived two My so",
-        "be ARRIVED two AFTER my SO",
-    );
+    testing("after be arrived two My so", "be ARRIVED two AFTER my SO");
     testing(
         "who hit retaining The That a we taken",
         "who RETAINING hit THAT a THE we TAKEN",

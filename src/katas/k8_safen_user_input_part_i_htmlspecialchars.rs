@@ -35,25 +35,33 @@
 */
 
 fn html_special_chars(html: &str) -> String {
-    html.chars().map(|c| {
-        match c {
+    html.chars()
+        .map(|c| match c {
             '<' => "&lt;".to_owned(),
             '>' => "&gt;".to_owned(),
             '"' => "&quot;".to_owned(),
             '&' => "&amp;".to_owned(),
             _ => c.to_string(),
-        }
-    }).collect()
+        })
+        .collect()
 }
 
 #[test]
 fn sample_tests() {
-    assert_eq!(html_special_chars("<h2>Hello World</h2>"),
-               "&lt;h2&gt;Hello World&lt;/h2&gt;");
-    assert_eq!(html_special_chars("Hello, how would you & I fare?"),
-               "Hello, how would you &amp; I fare?");
-    assert_eq!(html_special_chars("How was \"The Matrix\"?  Did you like it?"),
-               "How was &quot;The Matrix&quot;?  Did you like it?");
-    assert_eq!(html_special_chars("<script>alert('Website Hacked!');</script>"),
-               "&lt;script&gt;alert('Website Hacked!');&lt;/script&gt;");
+    assert_eq!(
+        html_special_chars("<h2>Hello World</h2>"),
+        "&lt;h2&gt;Hello World&lt;/h2&gt;"
+    );
+    assert_eq!(
+        html_special_chars("Hello, how would you & I fare?"),
+        "Hello, how would you &amp; I fare?"
+    );
+    assert_eq!(
+        html_special_chars("How was \"The Matrix\"?  Did you like it?"),
+        "How was &quot;The Matrix&quot;?  Did you like it?"
+    );
+    assert_eq!(
+        html_special_chars("<script>alert('Website Hacked!');</script>"),
+        "&lt;script&gt;alert('Website Hacked!');&lt;/script&gt;"
+    );
 }

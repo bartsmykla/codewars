@@ -69,11 +69,11 @@ fn sq_in_rect(mut length: i32, mut width: i32) -> Option<Vec<i32>> {
             Greater => {
                 result.push(width);
                 length -= width;
-            },
+            }
             Less => {
                 result.push(length);
                 width -= length
-            },
+            }
             Equal => {
                 result.push(length);
                 length = 0;
@@ -96,7 +96,6 @@ fn tests_sq_in_rect() {
     testing(5, 5, None);
 }
 
-
 #[derive(Debug)]
 struct RectSides {
     length: i32,
@@ -105,10 +104,7 @@ struct RectSides {
 
 impl RectSides {
     fn new(length: i32, width: i32) -> Self {
-        Self {
-            length,
-            width,
-        }
+        Self { length, width }
     }
 }
 
@@ -125,12 +121,12 @@ impl Iterator for RectSides {
                 self.length -= self.width;
 
                 Some(self.width)
-            },
+            }
             Less => {
                 self.width -= self.length;
 
                 Some(self.length)
-            },
+            }
             Equal => {
                 let min_side = self.width;
                 self.width = 0;

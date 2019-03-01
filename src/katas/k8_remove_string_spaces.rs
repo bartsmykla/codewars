@@ -21,16 +21,10 @@ fn returns_expected() {
         "88Bifk8hB8BB8BBBB888chl8BhBfd",
         no_space("8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd".to_string()),
     );
-    assert_eq!(
-        "8aaaaaddddr",
-        no_space("8aaaaa dddd r     ".to_string()),
-    );
+    assert_eq!("8aaaaaddddr", no_space("8aaaaa dddd r     ".to_string()),);
     assert_eq!(
         "jfBmgklf8hg88lbe8",
         no_space("jfBm  gk lf8hg  88lbe8 ".to_string()),
     );
-    assert_eq!(
-        "8jaam",
-        no_space("8j aam".to_string()),
-    );
+    assert_eq!("8jaam", no_space("8j aam".to_string()),);
 }

@@ -17,14 +17,13 @@
 */
 
 fn accum(s: &str) -> String {
-    let letters: Vec<_> = s.chars()
+    let letters: Vec<_> = s
+        .chars()
         .enumerate()
         .map(|(i, c)| {
             let mut result = c.to_ascii_uppercase().to_string();
 
-            result.push_str(&c.to_ascii_lowercase()
-                .to_string()
-                .repeat(i));
+            result.push_str(&c.to_ascii_lowercase().to_string().repeat(i));
 
             result
         })

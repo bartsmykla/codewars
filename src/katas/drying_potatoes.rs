@@ -1,6 +1,6 @@
 #![allow(unused)]
 
-fn potatoes (p0: i64, w0: i64, p1: i64) -> i64 {
+fn potatoes(p0: i64, w0: i64, p1: i64) -> i64 {
     (w0 as f64 * ((100.0 - p0 as f64) / (100.0 - p1 as f64))) as i64
 }
 

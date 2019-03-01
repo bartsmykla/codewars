@@ -23,4 +23,3 @@ fn reverse_words(str: &str) -> String {
 fn returns_expected() {
     assert_eq!(reverse_words("hello world!"), "world! hello");
 }
-

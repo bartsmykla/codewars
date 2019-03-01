@@ -45,4 +45,3 @@ fn sample_test() {
     assert_eq!(is_divisible(2, 4), false);
     assert_eq!(is_divisible(4, 2), true);
 }
-

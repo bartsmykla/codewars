@@ -23,13 +23,12 @@ fn count_positives_sum_negatives(input: Vec<i32>) -> Vec<i32> {
         return vec![];
     }
 
-    let (positive, negative) = input.into_iter()
-        .fold((0, 0), |(positive, negative), curr| {
-            match curr.cmp(&0) {
-                Greater => (positive + 1, negative),
-                Less => (positive, negative + curr),
-                Equal => (positive, negative),
-            }
+    let (positive, negative) = input
+        .into_iter()
+        .fold((0, 0), |(positive, negative), curr| match curr.cmp(&0) {
+            Greater => (positive + 1, negative),
+            Less => (positive, negative + curr),
+            Equal => (positive, negative),
         });
 
     vec![positive, negative]
@@ -37,9 +36,7 @@ fn count_positives_sum_negatives(input: Vec<i32>) -> Vec<i32> {
 
 #[test]
 fn returns_expected() {
-    let test_data1 = vec![
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12,-13, -14, -15,
-    ];
+    let test_data1 = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
     let expected1 = vec![10, -65];
     assert_eq!(count_positives_sum_negatives(test_data1), expected1);
 }

@@ -57,25 +57,21 @@
 fn encode(msg: String, n: i32) -> Vec<i32> {
     msg.as_bytes()
         .iter()
-        .zip(n.to_string()
-            .chars()
-            .cycle()
-            .map(|d| d.to_digit(10).unwrap() as i32))
+        .zip(
+            n.to_string()
+                .chars()
+                .cycle()
+                .map(|d| d.to_digit(10).unwrap() as i32),
+        )
         .map(|(&c, b)| i32::from(c - b'a') + b + 1)
         .collect()
 }
 
 #[test]
 fn fixed_tests() {
-    assert_eq!(
-        encode("abcd".to_owned(), 1),
-        vec![2, 3, 4, 5],
-    );
+    assert_eq!(encode("abcd".to_owned(), 1), vec![2, 3, 4, 5],);
 
-    assert_eq!(
-        encode("scout".to_owned(), 1939),
-        vec![20, 12, 18, 30, 21],
-    );
+    assert_eq!(encode("scout".to_owned(), 1939), vec![20, 12, 18, 30, 21],);
 
     assert_eq!(
         encode("masterpiece".to_owned(), 1939),

@@ -18,14 +18,13 @@
 */
 
 fn xo(string: &'static str) -> bool {
-    let (xs, os) = string.bytes()
-        .fold((0_usize, 0_usize), |(xs, os), c| {
-            match c.to_ascii_lowercase() {
-                b'x' => (xs + 1, os),
-                b'o' => (xs, os + 1),
-                _ => (xs, os),
-            }
-        });
+    let (xs, os) = string.bytes().fold((0_usize, 0_usize), |(xs, os), c| {
+        match c.to_ascii_lowercase() {
+            b'x' => (xs + 1, os),
+            b'o' => (xs, os + 1),
+            _ => (xs, os),
+        }
+    });
 
     xs == os
 }

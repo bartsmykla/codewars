@@ -10,7 +10,7 @@
 */
 
 fn count_sheep(n: u32) -> String {
-    (0 .. n).map(|i| format!("{} sheep...", i + 1)).collect()
+    (0..n).map(|i| format!("{} sheep...", i + 1)).collect()
 }
 
 #[test]

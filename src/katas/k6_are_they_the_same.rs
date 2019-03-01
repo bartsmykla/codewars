@@ -52,7 +52,9 @@
 */
 
 fn comp(mut a: Vec<i64>, mut b: Vec<i64>) -> bool {
-    if a.len() != b.len() { return false }
+    if a.len() != b.len() {
+        return false;
+    }
 
     a.sort_unstable_by_key(|&n| n.abs());
     b.sort_unstable_by_key(|&n| n.abs());
@@ -66,18 +68,20 @@ fn comp(mut a: Vec<i64>, mut b: Vec<i64>) -> bool {
 // Solution from user ᚮscottmcmᚭ at Rust community discord server,
 // channel: #code-review
 fn comp_v2(mut a: Vec<i64>, b: Vec<i64>) -> bool {
-    if a.len() != b.len() { return false }
+    if a.len() != b.len() {
+        return false;
+    }
 
-    a.iter_mut().for_each(|n| {
-        *n *= *n
-    });
+    a.iter_mut().for_each(|n| *n *= *n);
 
     use std::collections::BinaryHeap;
     let mut a = BinaryHeap::from(a);
     let mut b = BinaryHeap::from(b);
 
     while let (Some(a), Some(b)) = (a.pop(), b.pop()) {
-        if a != b { return false }
+        if a != b {
+            return false;
+        }
     }
 
     true
@@ -105,11 +109,7 @@ fn tests_comp() {
             vec![121, 14641, 20736, 36100, 25921, 361, 20736, 361],
             false,
         ),
-        (
-            vec![],
-            vec![],
-            true,
-        ),
+        (vec![], vec![], true),
         (
             vec![121, 144, 19, 161, 19, 144, 19, 11, 1008],
             vec![121, 14641, 20736, 36100, 25921, 361, 20736, 361],

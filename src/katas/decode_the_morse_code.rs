@@ -11,7 +11,7 @@
 use std::collections::HashMap;
 
 struct MorseDecoder {
-    morse_code: HashMap<String, String>
+    morse_code: HashMap<String, String>,
 }
 
 impl MorseDecoder {
@@ -57,7 +57,10 @@ impl MorseDecoder {
                 ("...---...".to_string(), "SOS".to_string()),
                 (".-.-.-".to_string(), ".".to_string()),
                 ("-.-.--".to_string(), "!".to_string()),
-            ].iter().cloned().collect(),
+            ]
+            .iter()
+            .cloned()
+            .collect(),
         }
     }
 
@@ -100,5 +103,8 @@ fn test_hey_jude() {
         "       ...---... -.-.--   - .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .   .-.. .- --.. -.--   -.. --- --. .-.-.-    "),
            "SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
     );
-    assert_eq!(decoder.decode_morse(".... . -.--   .--- ..- -.. ."), "HEY JUDE");
+    assert_eq!(
+        decoder.decode_morse(".... . -.--   .--- ..- -.. ."),
+        "HEY JUDE"
+    );
 }

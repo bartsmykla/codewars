@@ -88,9 +88,7 @@ fn parse_line(line: &str, balance: f64) -> Result<Line, Box<Error>> {
 }
 
 fn balance(book: &str) -> String {
-    let lines: Vec<_> = book.lines()
-        .filter(|line| !line.is_empty())
-        .collect();
+    let lines: Vec<_> = book.lines().filter(|line| !line.is_empty()).collect();
 
     let (first_line, rest_lines) = lines.split_at(1);
 
@@ -101,12 +99,8 @@ fn balance(book: &str) -> String {
     let mut result = vec![format!("Original Balance: {:.2}", balance)];
 
     for &line in rest_lines {
-        let (
-            check_number,
-            category,
-            check_amount,
-            balance_after,
-        ) = parse_line(line, balance).unwrap();
+        let (check_number, category, check_amount, balance_after) =
+            parse_line(line, balance).unwrap();
 
         balance = balance_after;
         expenses.push(check_amount);
@@ -114,10 +108,7 @@ fn balance(book: &str) -> String {
 
         let formatted_line = format!(
             "{} {} {:.2} Balance {:.2}",
-            check_number,
-            category,
-            check_amount,
-            balance_after,
+            check_number, category, check_amount, balance_after,
         );
         result.push(formatted_line);
     }
@@ -165,8 +156,30 @@ fn basic_tests() {
 121 Gasoline;! 13.6?;
 "#;
 
-    let b1sol="Original Balance: 1000.00\n125 Market 125.45 Balance 874.55\n126 Hardware 34.95 Balance 839.60\n127 Video 7.45 Balance 832.15\n128 Book 14.32 Balance 817.83\n129 Gasoline 16.10 Balance 801.73\nTotal expense  198.27\nAverage expense  39.65";
-    let b2sol="Original Balance: 1233.00\n125 Hardware 24.80 Balance 1208.20\n123 Flowers 93.50 Balance 1114.70\n127 Meat 120.90 Balance 993.80\n120 Picture 34.00 Balance 959.80\n124 Gasoline 11.00 Balance 948.80\n123 Photos 71.40 Balance 877.40\n122 Picture 93.50 Balance 783.90\n132 Tyres 19.00 Balance 764.90\n129 Stamps 13.60 Balance 751.30\n129 Fruits 17.60 Balance 733.70\n129 Market 128.00 Balance 605.70\n121 Gasoline 13.60 Balance 592.10\nTotal expense  640.90\nAverage expense  53.41";
+    let b1sol = "\
+                 Original Balance: 1000.00\n\
+                 125 Market 125.45 Balance 874.55\n\
+                 126 Hardware 34.95 Balance 839.60\n\
+                 127 Video 7.45 Balance 832.15\n\
+                 128 Book 14.32 Balance 817.83\n\
+                 129 Gasoline 16.10 Balance 801.73\n\
+                 Total expense  198.27\n\
+                 Average expense  39.65";
+    let b2sol = "Original Balance: 1233.00\n\
+                 125 Hardware 24.80 Balance 1208.20\n\
+                 123 Flowers 93.50 Balance 1114.70\n\
+                 127 Meat 120.90 Balance 993.80\n\
+                 120 Picture 34.00 Balance 959.80\n\
+                 124 Gasoline 11.00 Balance 948.80\n\
+                 123 Photos 71.40 Balance 877.40\n\
+                 122 Picture 93.50 Balance 783.90\n\
+                 132 Tyres 19.00 Balance 764.90\n\
+                 129 Stamps 13.60 Balance 751.30\n\
+                 129 Fruits 17.60 Balance 733.70\n\
+                 129 Market 128.00 Balance 605.70\n\
+                 121 Gasoline 13.60 Balance 592.10\n\
+                 Total expense  640.90\n\
+                 Average expense  53.41";
 
     dotest(b1, b1sol);
     dotest(b2, b2sol);

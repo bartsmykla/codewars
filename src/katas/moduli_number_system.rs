@@ -12,11 +12,11 @@ fn are_pairwise_coprime(numbers: &[i64]) -> bool {
     for (ni, &n) in numbers.iter().enumerate() {
         for (nk, &k) in numbers.iter().enumerate() {
             if ni == nk {
-                continue
+                continue;
             }
 
             if gcd(n, k) > 1 {
-                return false
+                return false;
             }
         }
     }
@@ -31,7 +31,9 @@ fn from_nb_2str(n: i64, sys: Vec<i64>) -> String {
         return String::from("Not applicable");
     }
 
-    sys.iter().map(|k| format!("-{}-", n % k)).collect::<String>()
+    sys.iter()
+        .map(|k| format!("-{}-", n % k))
+        .collect::<String>()
 }
 
 fn testing(n: i64, sys: Vec<i64>, exp: &str) {
@@ -40,7 +42,7 @@ fn testing(n: i64, sys: Vec<i64>, exp: &str) {
 
 #[test]
 fn basics_from_nb_2str() {
-    testing(779, vec![8,7,5,3], "-3--2--4--2-");
-    testing(187, vec![8,7,5,3], "-3--5--2--1-");
-    testing(3450, vec![13,11,7,5,3,2], "-5--7--6--0--0--0-");
+    testing(779, vec![8, 7, 5, 3], "-3--2--4--2-");
+    testing(187, vec![8, 7, 5, 3], "-3--5--2--1-");
+    testing(3450, vec![13, 11, 7, 5, 3, 2], "-5--7--6--0--0--0-");
 }

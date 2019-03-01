@@ -8,9 +8,7 @@ fn my_first_interpreter(code: &str) -> String {
             '+' => {
                 cell = cell.wrapping_add(1);
             }
-            '.' => {
-                acc.push(cell as char)
-            }
+            '.' => acc.push(cell as char),
             _ => {}
         }
 

@@ -28,7 +28,7 @@ impl CoffeeBuilder {
         CoffeeBuilder {
             sort: String::new(),
             milk: vec![],
-            sugar: vec![]
+            sugar: vec![],
         }
     }
 
@@ -40,7 +40,9 @@ impl CoffeeBuilder {
 
     fn set_cubano_coffee(mut self) -> CoffeeBuilder {
         self.sort = String::from("Cubano");
-        self.sugar.push(Sugar { sort: String::from("Brown") });
+        self.sugar.push(Sugar {
+            sort: String::from("Brown"),
+        });
 
         self
     }
@@ -85,17 +87,13 @@ fn sample_tests() {
         "Coffee { sort: \"Black\", milk: [Milk { fat: 3.2 }], sugar: [Sugar { sort: \"Regular\" }] }",
     );
 
-    let coffee = CoffeeBuilder::new()
-        .set_antoccino_coffee()
-        .build();
+    let coffee = CoffeeBuilder::new().set_antoccino_coffee().build();
     assert_eq!(
         format!("{:?}", coffee),
         "Coffee { sort: \"Americano\", milk: [Milk { fat: 0.5 }], sugar: [] }",
     );
 
-    let coffee = CoffeeBuilder::new()
-        .set_cubano_coffee()
-        .build();
+    let coffee = CoffeeBuilder::new().set_cubano_coffee().build();
     assert_eq!(
         format!("{:?}", coffee),
         "Coffee { sort: \"Cubano\", milk: [], sugar: [Sugar { sort: \"Brown\" }] }",

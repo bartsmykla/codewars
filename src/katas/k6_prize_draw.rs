@@ -56,19 +56,27 @@ fn rank(st: &str, we: Vec<i32>, n: usize) -> &str {
         return "Not enough participants";
     }
 
-    let mut ranked_people: Vec<_> = st.split(',').zip(&we)
+    let mut ranked_people: Vec<_> = st
+        .split(',')
+        .zip(&we)
         .map(|(name, weight)| {
-            (name, (name.bytes().map(|c| {
-                match c {
-                    b'a' ..= b'z' => i32::from(c - b'a' + 1),
-                    b'A' ..= b'Z' => i32::from(c - b'A' + 1),
-                    _ => unreachable!(),
-                }
-            }).sum::<i32>() + name.len() as i32) * weight)
-        }).collect();
+            (
+                name,
+                (name
+                    .bytes()
+                    .map(|c| match c {
+                        b'a'..=b'z' => i32::from(c - b'a' + 1),
+                        b'A'..=b'Z' => i32::from(c - b'A' + 1),
+                        _ => unreachable!(),
+                    })
+                    .sum::<i32>()
+                    + name.len() as i32)
+                    * weight,
+            )
+        })
+        .collect();
 
-    ranked_people
-        .sort_unstable_by_key(|&(name, rank)| (cmp::Reverse(rank), name));
+    ranked_people.sort_unstable_by_key(|&(name, rank)| (cmp::Reverse(rank), name));
 
     ranked_people[n - 1].0
 }
@@ -97,12 +105,7 @@ fn basics_rank() {
         4,
         "Abigail",
     );
-    testing(
-        "Lagon,Lily",
-        vec![1, 5],
-        2,
-        "Lagon",
-    );
+    testing("Lagon,Lily", vec![1, 5], 2, "Lagon");
     testing(
         "William,Willaim,Olivia,Olivai,Lily,Lyli",
         vec![1, 1, 1, 1, 1, 1],

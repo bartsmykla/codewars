@@ -1,2 +1,2 @@
-#![feature(as_cell)]
+#![feature(as_cell, test)]
 pub mod katas;

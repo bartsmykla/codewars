@@ -22,8 +22,7 @@
 fn feast(beast: &str, dish: &str) -> bool {
     let (b_len, d_len) = (beast.len(), dish.len());
 
-    beast[0..1] == dish[0..1] &&
-        beast[(b_len - 1)..b_len] == dish[(d_len - 1)..d_len]
+    beast[0..1] == dish[0..1] && beast[(b_len - 1)..b_len] == dish[(d_len - 1)..d_len]
 }
 
 #[test]

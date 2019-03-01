@@ -23,11 +23,9 @@
 */
 
 fn count_sheep(sheep: &[bool]) -> u8 {
-    sheep.iter().fold(0, |acc, curr| {
-        match curr {
-            true => acc + 1,
-            false => acc,
-        }
+    sheep.iter().fold(0, |acc, curr| match curr {
+        true => acc + 1,
+        false => acc,
     })
 }
 

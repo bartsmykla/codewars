@@ -23,7 +23,7 @@ fn next_item<T: PartialEq<T> + Clone>(slice: &[T], find: T) -> Option<T> {
 
     while let Some(item) = slice_iter.next() {
         if item == find {
-            return slice_iter.next()
+            return slice_iter.next();
         }
     }
 
@@ -32,20 +32,11 @@ fn next_item<T: PartialEq<T> + Clone>(slice: &[T], find: T) -> Option<T> {
 
 #[test]
 fn returns_expected() {
-    assert_eq!(
-        next_item(&["Joe", "Bob", "Sally"], "Bob"),
-        Some("Sally"),
-    );
+    assert_eq!(next_item(&["Joe", "Bob", "Sally"], "Bob"), Some("Sally"),);
 
-    assert_eq!(
-        next_item(&[0, 1], 0),
-        Some(1),
-    );
+    assert_eq!(next_item(&[0, 1], 0), Some(1),);
 
-    assert_eq!(
-        next_item(&[0, 1], 1),
-        None,
-    );
+    assert_eq!(next_item(&[0, 1], 1), None,);
 
     assert_eq!(
         next_item((1..10).collect::<Vec<_>>().as_slice(), 7),

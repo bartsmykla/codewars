@@ -23,11 +23,9 @@
 
 fn dna_to_rna(dna: &str) -> String {
     dna.chars()
-        .map(|c| {
-            match c {
-                'T' => 'U',
-                _ => c,
-            }
+        .map(|c| match c {
+            'T' => 'U',
+            _ => c,
         })
         .collect()
 }

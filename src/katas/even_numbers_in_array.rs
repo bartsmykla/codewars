@@ -1,14 +1,13 @@
 #![allow(unused)]
 
 fn even_numbers(array: &[i32], number: usize) -> Vec<i32> {
-    array.iter()
-        .rfold(Vec::new(), |mut acc, &curr| {
-            if curr % 2 == 0 && acc.len() < number {
-                acc.insert(0, curr)
-            }
+    array.iter().rfold(Vec::new(), |mut acc, &curr| {
+        if curr % 2 == 0 && acc.len() < number {
+            acc.insert(0, curr)
+        }
 
-            acc
-        })
+        acc
+    })
 }
 
 #[test]
@@ -18,10 +17,7 @@ fn sample_tests() {
         vec!(4, 6, 8),
     );
     assert_eq!(
-        even_numbers(
-            &vec!(-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26),
-            2,
-        ),
+        even_numbers(&vec!(-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26), 2,),
         vec!(-8, 26),
     );
     assert_eq!(

@@ -19,8 +19,6 @@ fn parse(code: &str) -> Vec<i32> {
 
 #[test]
 fn sample_tests() {
-    assert_eq!(parse("iiisdoso"),
-               vec![8, 64]);
-    assert_eq!(parse("iiisdosodddddiso"),
-               vec![8, 64, 3600]);
+    assert_eq!(parse("iiisdoso"), vec![8, 64]);
+    assert_eq!(parse("iiisdosodddddiso"), vec![8, 64, 3600]);
 }

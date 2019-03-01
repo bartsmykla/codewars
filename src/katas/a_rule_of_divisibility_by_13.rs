@@ -12,7 +12,6 @@ fn thirt(n: i64) -> i64 {
         .map(|(a, b)| i64::from(a * b))
         .sum();
 
-
     if n == result {
         return result;
     }
@@ -31,4 +30,3 @@ fn basics_thirt() {
     testequal(85299258, 31);
     testequal(5634, 57);
 }
-

@@ -5,7 +5,8 @@ use std::collections::BinaryHeap;
 fn high_and_low(numbers: &str) -> String {
     let parsed = numbers
         .split_whitespace()
-        .map(|n| n.parse::<i32>().unwrap()).collect::<BinaryHeap<i32>>()
+        .map(|n| n.parse::<i32>().unwrap())
+        .collect::<BinaryHeap<i32>>()
         .into_sorted_vec();
 
     format!("{} {}", parsed.last().unwrap(), parsed.first().unwrap())
