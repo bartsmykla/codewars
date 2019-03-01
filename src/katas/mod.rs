@@ -64,3 +64,4 @@ pub mod k8_safen_user_input_part_i_htmlspecialchars;
 pub mod k8_calculate_bmi;
 pub mod k7_mumbling;
 pub mod k6_are_they_the_same;
+pub mod k6_easy_balance_checking;
