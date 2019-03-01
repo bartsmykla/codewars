@@ -37,3 +37,10 @@ fn test() {
     assert_eq!(count_red_beads(3), 4);
     assert_eq!(count_red_beads(5), 8);
 }
+
+/*
+    What I learned or want I want to remember?
+        - `u32::saturating_sub` is very interesting method, and I learned that
+          there is much more similar at unsigned types.
+          Remember and read more about it.
+*/
