@@ -29,6 +29,7 @@ pub mod k7_build_a_square;
 pub mod k7_form_the_minimum;
 pub mod k7_frequency_sequence;
 pub mod k7_is_it_negative_zero_0;
+pub mod k7_maximum_length_difference;
 pub mod k7_maximum_multiple;
 pub mod k7_moves_in_squared_strings_i;
 pub mod k7_mumbling;
