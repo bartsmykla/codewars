@@ -26,6 +26,7 @@ pub mod k6_up_and_down;
 pub mod k7_a_rule_of_divisibility_by_7;
 pub mod k7_all_inclusive;
 pub mod k7_build_a_square;
+pub mod k7_deodorant_evaporator;
 pub mod k7_easy_wallpaper;
 pub mod k7_form_the_minimum;
 pub mod k7_frequency_sequence;
