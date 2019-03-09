@@ -42,6 +42,7 @@ pub mod k7_simple_beads_count;
 pub mod k7_sort_numbers;
 pub mod k7_string_ends_with;
 pub mod k7_sum_of_angles;
+pub mod k7_sum_of_odd_numbers;
 pub mod k7_thinkful_string_drills_repeater;
 pub mod k7_tooleetspeeak;
 pub mod k7_two_to_one;
