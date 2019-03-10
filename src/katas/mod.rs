@@ -30,6 +30,7 @@ pub mod k7_deodorant_evaporator;
 pub mod k7_easy_wallpaper;
 pub mod k7_form_the_minimum;
 pub mod k7_frequency_sequence;
+pub mod k7_going_to_the_cinema;
 pub mod k7_is_it_negative_zero_0;
 pub mod k7_maximum_length_difference;
 pub mod k7_maximum_multiple;
