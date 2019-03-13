@@ -39,6 +39,7 @@ pub mod k7_mumbling;
 pub mod k7_number_of_people_in_the_bus;
 pub mod k7_reverse_words;
 pub mod k7_row_weights;
+pub mod k7_sequencesum;
 pub mod k7_shortest_word;
 pub mod k7_simple_beads_count;
 pub mod k7_sort_numbers;
