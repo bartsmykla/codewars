@@ -24,6 +24,7 @@ pub mod k6_rectangle_into_squares;
 pub mod k6_scheduling_shortest_job_first_or_sjf;
 pub mod k6_up_and_down;
 pub mod k7_a_rule_of_divisibility_by_7;
+pub mod k7_adding_words_part_i;
 pub mod k7_all_inclusive;
 pub mod k7_build_a_square;
 pub mod k7_deodorant_evaporator;
