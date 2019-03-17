@@ -39,6 +39,7 @@ pub mod k7_maximum_multiple;
 pub mod k7_moves_in_squared_strings_i;
 pub mod k7_mumbling;
 pub mod k7_number_of_people_in_the_bus;
+pub mod k7_remove_duplicate_words;
 pub mod k7_reverse_words;
 pub mod k7_row_weights;
 pub mod k7_sequencesum;
